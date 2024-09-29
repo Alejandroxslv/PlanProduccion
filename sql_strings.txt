@@ -1,0 +1,20 @@
+
+CREATE TABLE produccion(
+             PPN varchar(255),
+             MPN varchar(255),
+             DT varchar(255),
+             WO varchar(255),
+             CU varchar(255),
+             MS varchar(255),
+             BP varchar(255),
+             BT varchar(255),
+             CS varchar(255),
+             QT varchar(255),
+             LT varchar(255),
+             PO varchar(255),
+             MK varchar(255),
+             CN varchar(255),
+             JN varchar(255),
+             EP varchar(255)
+         );
+
