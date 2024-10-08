@@ -124,3 +124,12 @@ class WorkOrder:
         val = (self.WO,)
         mycursor.execute(sql, val)
         mydb.commit()
+
+
+def Prod_Show():
+    sql = "SELECT * FROM produccion"
+    mycursor.execute(sql)
+    number_rows = mycursor.rowcount
+    result = mycursor.fetchall()
+    print(result)
+    print(number_rows)

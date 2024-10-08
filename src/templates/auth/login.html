@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block body %}
-<form class="form-signin">
+<form class="form-signin" action="/login" method="POST">
     <img class="mb-4" src="{{ url_for('static', filename='img/logo.jpeg') }}" alt="" width="89" height="100">
     <h1 class="h3 mb-3 fw-normal">Ingreso</h1>
     <div class="form-floating">
-      <input type="text" class="form-control" id="username" placeholder="Username">
+      <input type="text" class="form-control" id="username" placeholder="Username" name="username">
       <label for="username">Usuario</label>
     </div>
     <div class="form-floating mt-2">

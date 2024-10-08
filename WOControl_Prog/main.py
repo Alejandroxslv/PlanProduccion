@@ -1,23 +1,31 @@
 import time
 import mysql.connector
-from WorkOrder import WorkOrder
+from WorkOrder import WorkOrder, Prod_Show
 import flet as ft
 
 # [)>@06@0PN12204716-00@1MPFS32K146HFT0VLHR@2DT2420@3WO029663@4CUKOS@5MS3@6BP12034852@7BTQ25010@8CSE653F36Ah@9QT500@ALTQB32JG.000@BPONA@CMK12204716-00-ESW0067@DCNKostal@EJN12204716-00@FEPEPS MEXICO@@
+
 if __name__ == '__main__':
 
     while True:
         print('---------------- MENU ----------------')
-        print('1. Agregar a producción')
-        print('2. Quitar de producción')
-        print('3. Mover a PT')
-        print('4. Dar salida')
-        print('0. Salir')
+        print('1. Agregar batch a producción')
+        print('2. Mostar material en Producción')
+        print('3. Eliminar batch de producción')
+        print('4. Mover batch de producción a PT')
+        print('5. Mostrar material en PT')
+        print('6. Dar salida a batch')
+        print('0. Salir del programa')
         print('--------------------------------------')
         opt = input('Ingrese acción a realizar: ')
         if opt =='0':
+            print('Saliendo')
+            print('.')
+            print('.')
+            print('.')
             break
         elif opt=='1':
+            print('Agregar batch a producción')
             lector = input('Trama de datos (DataMatrix): ')
             df = WorkOrder(lector)
             if df.isValid():
@@ -29,6 +37,10 @@ if __name__ == '__main__':
             else:
                 print('Trama inválida. Por favor, ingrese una WO válida.')
         elif opt=='2':
+            print('Mostrar producción')
+            Prod_Show()
+        elif opt=='3': #Eliminar de producción
+            print('Eliminar batch de producción')
             lector = input('Trama de datos (DataMatrix): ')
             df = WorkOrder(lector)
             if df.isValid():
@@ -39,7 +51,8 @@ if __name__ == '__main__':
                     print('Esta WorkOrder no existe en piso de producción')
             else:
                 print('Trama inválida. Por favor, ingrese una WO válida.')
-        elif opt=='3':
+        elif opt=='4':
+            print('Mover batch de producción a PT')
             lector = input('Trama de datos (DataMatrix): ')
             df = WorkOrder(lector)
             if df.Prod_Exists():
@@ -49,7 +62,10 @@ if __name__ == '__main__':
                 print('Se elimina WorkOrder de piso de producción')
             else:
                 print('Esta WorkOrder no existe en piso de producción')
-        elif opt=='4':
+        elif opt=='5':
+            print('Mostrar material en PT')
+
+        elif opt=='6':
             lector = input('Trama de datos (DataMatrix): ')
             df = WorkOrder(lector)
             if df.PT_Exists():
@@ -57,9 +73,3 @@ if __name__ == '__main__':
                 print('Se elimina WorkOrder de PT')
             else:
                 print('Esta WorkOrder no existe en PT')
-
-
-
-
-
-
