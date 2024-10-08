@@ -9,7 +9,6 @@ app = Flask(__name__)
 db = MySQL(app)
 
 
-
 @app.route('/')
 def index():
     return redirect(url_for('login'))
