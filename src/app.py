@@ -18,9 +18,9 @@ def login():
     if request.method=='POST':
         print(request.form['username'])
         print(request.form['password'])
-        return render_template('/auth/login.html')
+        return render_template('.src/templates/auth/login.html')
     else:
-        return render_template('/auth/login.html')
+        return render_template('.src/templates/auth/login.html')
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])
